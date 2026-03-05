@@ -7,7 +7,6 @@ export default function Home() {
       {/* Navbar */}
       <nav className="flex items-center justify-between px-8 py-5">
         <div className="flex items-center gap-2">
-          <span className="text-2xl">✨</span>
           <span className="text-xl font-semibold text-neutral-800 tracking-tight">GlowIQ</span>
         </div>
         <Link
@@ -70,7 +69,7 @@ export default function Home() {
             {/* Face placeholder */}
             <div className="bg-linear-to-br from-orange-50 to-amber-50 rounded-2xl h-52 flex items-center justify-center mb-4 relative overflow-hidden">
               <div className="flex flex-col items-center gap-2 z-10">
-                <span className="text-6xl">🧖‍♀️</span>
+               
                 <span className="text-xs text-orange-400 font-medium bg-white px-3 py-1 rounded-full shadow-sm">Skin analyzed</span>
               </div>
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-orange-100 rounded-full opacity-60" />
@@ -93,9 +92,9 @@ export default function Home() {
             </div>
 
             <div className="flex flex-wrap gap-2">
-              <span className="bg-red-50 text-red-500 text-xs px-3 py-1 rounded-full border border-red-100">🔴 Acne</span>
-              <span className="bg-amber-50 text-amber-500 text-xs px-3 py-1 rounded-full border border-amber-100">🟡 Dark Spots</span>
-              <span className="bg-green-50 text-green-500 text-xs px-3 py-1 rounded-full border border-green-100">✅ No Wrinkles</span>
+              <span className="bg-red-50 text-red-500 text-xs px-3 py-1 rounded-full border border-red-100"> Acne</span>
+              <span className="bg-amber-50 text-amber-500 text-xs px-3 py-1 rounded-full border border-amber-100"> Dark Spots</span>
+              <span className="bg-green-50 text-green-500 text-xs px-3 py-1 rounded-full border border-green-100"> No Wrinkles</span>
             </div>
           </div>
         </div>
