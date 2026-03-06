@@ -6,7 +6,15 @@ from PIL import Image
 import tensorflow as tf
 import io
 
+from langchain_groq import ChatGroq
+from langchain_core.prompts import PromptTemplate
+from langchain_core.output_parsers import JsonOutputParser
+from dotenv import load_dotenv
+load_dotenv()
+
+
 app = FastAPI()
+
 
 # Allow Next.js frontend to call this API
 app.add_middleware(
