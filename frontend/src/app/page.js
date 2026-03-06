@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import girlImage from './image/girl_image.png'
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#FDF8F4] flex flex-col">
@@ -21,8 +21,8 @@ export default function Home() {
       <section className="flex-1 flex flex-col lg:flex-row items-center justify-center gap-12 px-8 py-16 max-w-6xl mx-auto w-full">
         {/* Left */}
         <div className="flex-1 flex flex-col gap-6">
-          <span className="inline-flex items-center gap-2 bg-orange-50 text-orange-500 text-xs font-medium px-3 py-1.5 rounded-full w-fit border border-orange-100">
-            🤖 AI-Powered · Free · Under 10 seconds
+          <span className="inline-flex items-center gap-2 bg-orange-50 text-orange-500  md:text-xl text-xs font-medium px-3 py-1.5 rounded-full w-fit border border-orange-100 ">
+              AI-Powered · Free · Under 10 seconds
           </span>
 
           <h1 className="text-5xl lg:text-6xl font-bold text-neutral-900 leading-tight">
@@ -67,12 +67,9 @@ export default function Home() {
         <div className="flex-1 flex justify-center">
           <div className="bg-white rounded-3xl shadow-xl p-6 w-full max-w-sm border border-neutral-100">
             {/* Face placeholder */}
-            <div className="bg-linear-to-br from-orange-50 to-amber-50 rounded-2xl h-52 flex items-center justify-center mb-4 relative overflow-hidden">
-              <div className="flex flex-col items-center gap-2 z-10">
-               
-                <span className="text-xs text-orange-400 font-medium bg-white px-3 py-1 rounded-full shadow-sm">Skin analyzed</span>
-              </div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-orange-100 rounded-full opacity-60" />
+            <div className="bg-linear-to-br from-orange-50 to-amber-50 rounded-2xl h-70 flex items-center justify-center mb-4 relative overflow-hidden">
+
+              <img src={girlImage.src} alt="Face Placeholder" className="w-full h-full object-cover rounded-2xl" />
             </div>
 
             {/* Mini results */}
