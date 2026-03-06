@@ -1,4 +1,4 @@
-# ✨ GlowIQ — AI-Powered Skin Analysis App
+# GlowIQ — AI-Powered Skin Analysis App
 
 **GlowIQ** is a full-stack AI web application that analyzes your skin type from a photo and generates a personalized skincare routine, product recommendations, and skin insights — powered by a custom TensorFlow model. Groq LLM is used to generate the paragraphs and points for the skin-care. So overall it is a better project for ML + GEN-AI
 
@@ -7,7 +7,7 @@
 ## Screenshots
 
 ### Home Page
-![Home Page](./screenshots/home.png)
+![Home Page](./screenshots/Home.png)
 
 ### Analyze Page
 ![Analyze Page](./screenshots/analyze.png)
