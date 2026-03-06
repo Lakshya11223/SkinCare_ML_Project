@@ -22,12 +22,6 @@ export default function ResultsPage() {
     );
   }
 
-  const severityStyle = {
-    red:    "bg-red-50 border-red-100 text-red-600",
-    yellow: "bg-amber-50 border-amber-100 text-amber-600",
-    green:  "bg-green-50 border-green-100 text-green-600",
-  };
-  const severityDot = { red: "🔴", yellow: "🟡", green: "✅" };
   const scoreOffset = 163 - (163 * data.skin_score) / 100;
 
   return (
@@ -44,12 +38,13 @@ export default function ResultsPage() {
         <div className="max-w-2xl mx-auto">
           <p className="text-neutral-400 text-sm mb-1">Your personalized</p>
           <h1 className="text-3xl font-bold text-white">Skin Report 🌿</h1>
-          <p className="text-neutral-500 text-xs mt-1">Model confidence: {data.confidence}%</p>
+          <p className="text-neutral-500 text-xs mt-1">Model confidence: {data.skin_score}%</p>
         </div>
       </div>
 
       <div className="max-w-2xl mx-auto px-4 -mt-12 space-y-4">
-        {/* Top cards */}
+
+        {/* Top cards — Score, Tone, Type */}
         <div className="grid grid-cols-3 gap-3">
           <div className="bg-white rounded-2xl p-4 shadow-sm border border-neutral-100 flex flex-col items-center justify-center gap-2">
             <p className="text-xs text-neutral-400 uppercase tracking-wide">Score</p>
@@ -67,6 +62,7 @@ export default function ResultsPage() {
               {data.skin_score >= 80 ? "Nice Skin" : data.skin_score >= 70 ? "Good Skin" : "Fair Skin"}
             </p>
           </div>
+
           <div className="bg-white rounded-2xl p-4 shadow-sm border border-neutral-100">
             <p className="text-xs text-neutral-400 uppercase tracking-wide mb-2">Tone</p>
             <div className="flex gap-1 mb-2">
@@ -77,48 +73,11 @@ export default function ResultsPage() {
             <p className="text-xs font-semibold text-neutral-800">{data.skin_tone.split(" / ")[0]}</p>
             <p className="text-xs text-neutral-400">{data.skin_tone.split(" / ")[1]} Undertone</p>
           </div>
+
           <div className="bg-white rounded-2xl p-4 shadow-sm border border-neutral-100 flex flex-col justify-center">
             <p className="text-xs text-neutral-400 uppercase tracking-wide mb-2">Type</p>
             <p className="text-lg font-bold text-neutral-800">{data.skin_type}</p>
             <p className="text-xs text-orange-400 mt-1">Detected</p>
-          </div>
-        </div>
-
-        {/* Concerns */}
-        <div className="bg-white rounded-2xl p-5 shadow-sm border border-neutral-100">
-          <p className="text-xs text-neutral-400 uppercase tracking-wide mb-4">Concerns Detected</p>
-          <div className="grid grid-cols-2 gap-2">
-            {data.concerns.map((c) => (
-              <div key={c.label} className={`flex items-center gap-2.5 rounded-xl px-3 py-2.5 border ${severityStyle[c.severity]}`}>
-                <span className="text-sm">{severityDot[c.severity]}</span>
-                <div>
-                  <p className="text-xs font-semibold">{c.label}</p>
-                  <p className="text-xs opacity-70">{c.level}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Shade Matches */}
-        <div className="bg-white rounded-2xl p-5 shadow-sm border border-neutral-100">
-          <p className="text-xs text-neutral-400 uppercase tracking-wide mb-4">Your Shade Matches</p>
-          <div className="flex flex-col gap-3">
-            {data.shade_matches.map((s, i) => (
-              <div key={s.brand}>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full shadow-sm border border-neutral-100" style={{ background: s.hex }} />
-                    <div>
-                      <p className="text-sm font-medium text-neutral-800">{s.brand}</p>
-                      <p className="text-xs text-neutral-400">{s.shade}</p>
-                    </div>
-                  </div>
-                  <span className="text-xs bg-orange-50 text-orange-500 font-medium px-2 py-1 rounded-lg border border-orange-100">Match</span>
-                </div>
-                {i < data.shade_matches.length - 1 && <div className="h-px bg-neutral-50 mt-3" />}
-              </div>
-            ))}
           </div>
         </div>
 
@@ -177,7 +136,7 @@ export default function ResultsPage() {
                   </div>
                   <span className="text-base font-bold text-orange-400">{p.price}</span>
                 </div>
-                <div className="grid grid-cols-2 gap-3 mb-4">
+                <div className="grid grid-cols-2 gap-3">
                   <div className="bg-green-50 rounded-xl p-3 border border-green-100">
                     <p className="text-xs font-semibold text-green-700 mb-2">✅ Pros</p>
                     {p.pros.map((pro) => (
@@ -191,15 +150,12 @@ export default function ResultsPage() {
                     ))}
                   </div>
                 </div>
-                <div className="flex gap-2">
-                  <a href={p.amazon} target="_blank" rel="noreferrer" className="flex-1 text-center text-xs font-medium bg-neutral-900 text-white py-2.5 rounded-xl hover:bg-neutral-700 transition-colors">🛒 Amazon</a>
-                  <a href={p.nykaa} target="_blank" rel="noreferrer" className="flex-1 text-center text-xs font-medium border border-neutral-200 text-neutral-700 py-2.5 rounded-xl hover:border-neutral-400 transition-colors">💄 Nykaa</a>
-                </div>
               </div>
             ))}
           </div>
         </div>
 
+        {/* Scan Again */}
         <div className="bg-neutral-900 rounded-2xl p-6 text-center">
           <p className="text-white font-bold text-lg mb-1">Track your progress 📈</p>
           <p className="text-neutral-400 text-sm mb-4">Scan again in 30 days to see improvements.</p>
@@ -207,6 +163,7 @@ export default function ResultsPage() {
             Scan Again
           </Link>
         </div>
+
       </div>
     </main>
   );
