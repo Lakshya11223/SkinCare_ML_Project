@@ -4,18 +4,6 @@
 
 ---
 
-## Screenshots
-
-### Home Page
-![Home Page](./screenshots/Home.png)
-
-### Analyze Page
-![Analyze Page](./screenshots/analyze.png)
-
-### Results Page
-![Results Page](./screenshots/result.png)
-
-
 ## Features
 
 -  **Upload or capture** a face photo for skin analysis
@@ -40,6 +28,17 @@
 | LLM Framework | LangChain Core + LangChain Groq |
 
 ---
+
+## Screenshots
+
+### Home Page
+![Home Page](./screenshots/Home.png)
+
+### Analyze Page
+![Analyze Page](./screenshots/analyze.png)
+
+### Results Page
+![Results Page](./screenshots/result.png)
 
 ## 📁 Project Structure
 
