@@ -52,10 +52,12 @@ app/
 │   │   └── results/
 │   │       └── page.jsx       
 │   └── public/
-├── backend/
-│   ├── main.py               
-│   ├── skin_classifier_model.h5
-│   └── .env                   # GROQ_API_KEY goes here
+├
+│── main.py               
+│── skin_classifier_model.h5
+│── .gitignore 
+|── train.py   
+|── requairement.txt              
 ├── screenshots/              
 │   ├── home.png
 │   ├── analyze.png
