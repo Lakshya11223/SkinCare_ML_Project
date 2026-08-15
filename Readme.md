@@ -72,7 +72,7 @@ app/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/SkinCare_ML_Project
+git clone https://github.com/Lakshya11223/SkinCare_ML_Project
 cd app
 ```
 
